@@ -1,0 +1,43 @@
+YOU ask a question
+        ↓
+Agent 1 GENERATOR   → writes an answer (like the researcher)
+        ↓
+Agent 2 AUDITOR     → finds bias in that answer (like the colleague)
+        ↓
+Agent 3 REFINER     → fixes the biased answer (like the rewrite)
+        ↓
+Agent 4 VERIFIER    → confirms it's now fair (like the supervisor)
+        ↓
+You get a BIAS-FREE answer
+
+
+
+
+
+
+
+
+bias_audit_pipeline/
+│
+├── agents/
+│   ├── __init__.py          → makes agents/ a Python module (empty, required)
+│   └── generator_agent.py   → Agent 1: generates the initial response
+│
+├── utils/
+│   ├── __init__.py          → makes utils/ a Python module (empty, required)
+│   └── state.py             → the shared notebook all agents write to
+│
+├── workflows/
+│   └── __init__.py          → makes workflows/ a Python module (empty, required)
+│
+├── policies/
+│   └── __init__.py          → makes policies/ a Python module (empty, required)
+│
+├── logs/                    → empty for now, will store audit logs later
+│
+├── test_gemini.py           → first test: proved Ollama works
+├── test_state.py            → second test: proved shared state works
+├── test_generator.py        → third test: proved Agent 1 works
+├── list_models.py           → one-time use: showed available Ollama models
+└── WORKFLOW                 → looks like a note file you 
+created?
